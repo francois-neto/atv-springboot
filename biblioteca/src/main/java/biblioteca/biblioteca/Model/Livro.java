@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Livro {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ds_isbn", nullable = false)
     @JsonProperty("isbn")
     private Long isbn;
 
@@ -27,11 +27,11 @@ public class Livro {
 
     @Column(name = "ds_anoLivro", nullable = false)
     @JsonProperty("anoLivro")
-    private Year Ano;
+    private Year anoLivro;
 
     @Column(name = "ds_edicaoLivro", nullable = false)
     @JsonProperty("edicaoLivro")
-    private int edicaoLivro;
+    private Integer edicaoLivro;
 
     @ManyToOne 
     @JoinColumn(name = "autor_id", nullable = false)
